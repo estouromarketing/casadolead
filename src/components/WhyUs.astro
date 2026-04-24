@@ -1,0 +1,119 @@
+---
+const points = [
+  {
+    title: 'Resultados, não relatórios',
+    desc: 'Enquanto a maioria das agências entrega relatórios, nós entregamos resultados. Cada campanha é criada sob medida, monitorada de perto e otimizada constantemente para garantir o melhor retorno sobre o seu investimento.',
+  },
+  {
+    title: 'Estratégias personalizadas',
+    desc: 'Não trabalhamos com fórmulas prontas. Criamos um plano estratégico baseado no seu mercado, seu público e seus objetivos.',
+  },
+  {
+    title: 'Tecnologia + criatividade',
+    desc: 'Combinamos as melhores ferramentas do mercado com criatividade e análise de dados para entregar campanhas que realmente convertem.',
+  },
+];
+---
+<section id="diferenciais" class="whyus-section">
+  <div class="container whyus-inner">
+    <!-- Left: heading -->
+    <div class="whyus-left">
+      <span class="label anim-hidden anim-left">Por que nos escolher?</span>
+      <h2 class="section-title whyus-title anim-hidden anim-left" style="--delay:100ms">
+        O que nos diferencia da concorrência?
+      </h2>
+      <p class="whyus-sub anim-hidden anim-left" style="--delay:200ms">
+        Estratégias Personalizadas
+      </p>
+      <a href="https://wa.me/5511943722083?text=Quero+saber+mais+sobre+a+Casa+do+Lead!"
+         class="btn anim-hidden anim-left"
+         target="_blank" rel="noopener"
+         style="--delay:300ms; margin-top:8px">
+        Quero Resultados de Verdade
+      </a>
+    </div>
+
+    <!-- Right: list -->
+    <div class="whyus-right">
+      {points.map((pt, i) => (
+        <div class="whyus-item anim-hidden anim-right" style={`--delay:${i * 120}ms`}>
+          <div class="whyus-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="whyus-item-title">{pt.title}</h3>
+            <p class="whyus-item-desc">{pt.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.whyus-section {
+  background: var(--color-dark);
+  padding: 96px 0;
+}
+.whyus-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.whyus-title {
+  font-size: clamp(26px, 3.5vw, 40px);
+  margin: 12px 0 16px;
+}
+.whyus-sub {
+  font-family: var(--font-label);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--color-orange);
+  margin-bottom: 32px;
+  transition-delay: var(--delay, 0ms);
+}
+.whyus-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 12px;
+}
+.whyus-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition-delay: var(--delay, 0ms);
+}
+.whyus-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(245,144,13,0.12);
+  border: 1px solid rgba(245,144,13,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+  margin-top: 2px;
+}
+.whyus-item-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+.whyus-item-desc {
+  font-size: 14px;
+  line-height: 1.7em;
+  color: var(--color-text);
+}
+@media (max-width: 1024px) {
+  .whyus-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+</style>

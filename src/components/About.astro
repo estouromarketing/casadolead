@@ -1,0 +1,72 @@
+---
+---
+<section id="sobre" class="about-section">
+  <div class="container about-inner">
+    <!-- Left: text -->
+    <div class="about-content">
+      <span class="label anim-hidden anim-left">Sobre Nós</span>
+      <h2 class="section-title about-title anim-hidden anim-left" style="--delay:100ms">
+        Nossa História
+      </h2>
+      <p class="about-text anim-hidden anim-left" style="--delay:200ms">
+        Fundada por Vicente Fonseca, a Casa do Lead é fruto de uma transição de carreira pautada pela excelência. Com bagagem em grandes multinacionais, Vicente enxergou no marketing digital a oportunidade de aplicar processos rigorosos de gestão para pequenos e médios negócios.
+      </p>
+      <p class="about-text anim-hidden anim-left" style="--delay:300ms">
+        Após formações intensivas em tráfego pago e meses de testes práticos, o projeto que começou em um home office durante a pandemia escalou para uma operação de alta performance. O nome Casa do Lead reflete essa essência: o lugar onde a estratégia é acolhida com cuidado e transformada em resultados reais. Hoje, ajudamos empresários a alcançarem a mesma liberdade e crescimento que transformaram a vida do nosso CEO.
+      </p>
+      <a href="https://wa.me/5511943722083?text=Quero+saber+mais+sobre+a+Casa+do+Lead!"
+         class="btn anim-hidden anim-left"
+         target="_blank" rel="noopener"
+         style="--delay:400ms; margin-top:8px">
+        Falar com a equipe
+      </a>
+    </div>
+
+    <!-- Right: image -->
+    <div class="about-image anim-hidden anim-right">
+      <img
+        src="https://casadolead.com.br/wp-content/uploads/2026/01/Design-sem-nome-17-e1773407118504.png"
+        alt="Vicente Fonseca – Fundador da Casa do Lead"
+        width="480"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+.about-section {
+  background: var(--color-dark);
+  padding: 96px 0;
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.about-title {
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 12px 0 28px;
+}
+.about-text {
+  font-size: 15px;
+  line-height: 1.8em;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  transition-delay: var(--delay, 0ms);
+}
+.about-image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  transition-delay: var(--delay, 0ms);
+}
+@media (max-width: 1024px) {
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .about-image { max-width: 480px; }
+}
+</style>

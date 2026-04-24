@@ -1,0 +1,116 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Dominância Local',
+    desc: 'Apareça para quem está perto de você e pronto para consumir.',
+  },
+  {
+    num: '02',
+    title: 'Escala de Vendas',
+    desc: 'Alcance novos públicos e estados com anúncios segmentados.',
+  },
+  {
+    num: '03',
+    title: 'Dados, não achismos',
+    desc: 'Relatórios claros que mostram o ROI (Retorno sobre o Investimento).',
+  },
+];
+---
+<section class="process-section">
+  <div class="container">
+    <div class="process-header anim-hidden">
+      <span class="label">Benefícios</span>
+      <h2 class="section-title process-title">Nossos Processos</h2>
+      <p class="process-subtitle">Método simples, resultado real</p>
+    </div>
+
+    <div class="process-steps">
+      {steps.map((step, i) => (
+        <div class="process-step anim-hidden anim-left" style={`--delay:${i * 150}ms`}>
+          <div class="step-divider" aria-hidden="true"></div>
+          <div class="step-num">{step.num}</div>
+          <div class="step-content">
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-desc">{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.process-section {
+  background: var(--color-primary);
+  padding: 96px 0;
+}
+.process-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.process-title {
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 12px 0 16px;
+}
+.process-subtitle {
+  font-family: var(--font-label);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--color-text);
+}
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 40px 0;
+  position: relative;
+  transition-delay: var(--delay, 0ms);
+}
+.step-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+.process-step:first-child .step-divider { display: none; }
+.step-num {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--color-orange);
+  line-height: 1em;
+  flex-shrink: 0;
+  min-width: 80px;
+  text-align: right;
+  opacity: 0.5;
+}
+.step-content { padding-top: 8px; }
+.step-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+.step-desc {
+  font-size: 15px;
+  line-height: 1.7em;
+  color: var(--color-text);
+}
+
+@media (max-width: 767px) {
+  .step-num { font-size: 44px; min-width: 56px; }
+  .step-title { font-size: 18px; }
+}
+</style>
