@@ -20,7 +20,7 @@ const posts = [
   <div class="container">
     <div class="blog-header anim-hidden">
       <span class="label">Blog</span>
-      <h2 class="section-title blog-title">Conteúdo para crescer</h2>
+      <h2 class="section-title blog-title">Novidades</h2>
       <p class="blog-sub">Dicas, novidades e conteúdo direto ao ponto para ajudar seu negócio a crescer.</p>
     </div>
     <div class="blog-grid">
@@ -38,6 +38,16 @@ const posts = [
           </div>
         </article>
       ))}
+    </div>
+
+    <div class="blog-cta anim-hidden" style="--delay:300ms">
+      <a href="https://wa.me/5511943722083?text=Quero+saber+mais+sobre+a+Casa+do+Lead!"
+         class="btn" target="_blank" rel="noopener">
+        Fale com a Gente
+      </a>
+      <a href="#blog" class="btn btn-outline">
+        Nosso Blog
+      </a>
     </div>
   </div>
 </section>
@@ -117,6 +127,15 @@ const posts = [
 .blog-card-title a { transition: color 0.2s; }
 .blog-card-title a:hover { color: var(--color-orange); }
 .blog-card { transition-delay: var(--delay, 0ms); }
+
+.blog-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  transition-delay: var(--delay, 0ms);
+}
 
 @media (max-width: 600px) {
   .blog-grid { grid-template-columns: 1fr; max-width: 380px; }
