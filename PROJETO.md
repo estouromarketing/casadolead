@@ -158,17 +158,41 @@ Casa-do-Lead/
 
 ---
 
-## Configurações Pendentes
+## O que já está pronto (atualizado 2026-05-14)
 
-### 1. Logo
-Colocar o arquivo de logo em `public/logo.png` (ou `.svg`) e editar `Header.astro`:
+| Item | Status |
+|------|--------|
+| Estrutura Astro completa (Header, Hero, Stats, Services, About, Process, WhyUs, Testimonials, Blog, Footer) | ✅ |
+| Imagens locais em `public/images/` (hero, sobre, blog-1, blog-2) | ✅ |
+| Logo CL hexagonal no header (`logo-icon.png`) | ✅ |
+| Ícones laranja nos stats (`icon-9` a `icon-12`) | ✅ |
+| Ícones brancos WP nos cards de serviços (`icon-13` a `icon-16`) | ✅ |
+| About: texto "Por que Casa do Lead?" + foto correta do Vicente | ✅ |
+| Blog: título "Novidades" + botões "Fale com a Gente" / "Nosso Blog" | ✅ |
+| Services: parágrafo intro + botão CTA "O plano ideal para seu sucesso..." | ✅ |
+| GTM (GTM-PQ2D6JQB) instalado | ✅ |
+| Trustindex widget (5 reviews Google) | ✅ |
+| Animações de entrada (Intersection Observer) | ✅ |
+| Lottie animations (hero play, deco, particle, header) | ✅ |
+| YouTube lightbox | ✅ |
+| WhatsApp float button | ✅ |
+| Responsive mobile | ✅ |
 
-```astro
-<!-- Substituir a linha do logo-text por: -->
-<img src="/logo.png" alt="Casa do Lead" height="40" />
-```
+## Pendências para terminar
 
-### 2. Newsletter (Formspree)
+### 🔴 Crítico (obrigatório antes de ir ao ar)
+
+**1. Logo com fundo transparente**
+O arquivo `public/images/logo-icon.png` (Design-sem-nome-16.png) tem fundo branco — aparece como um badge branco no header escuro. Pedir ao Vicente/designer um PNG com fundo transparente (só o hexágono CL). Depois substituir o arquivo e ajustar o CSS se necessário.
+
+**2. Vercel — linkar o projeto**
+O repositório `estouromarketing/casadolead` ainda não está importado no Vercel.
+1. Vercel Dashboard → **Add New → Project**
+2. **Import Git Repository** → `estouromarketing/casadolead`
+3. Framework: **Astro** (detecta automático)
+4. Clicar em **Deploy**
+
+**3. Formspree — newsletter no footer**
 1. Criar conta gratuita em https://formspree.io
 2. Criar novo formulário → copiar o ID (ex: `xpzgwqrj`)
 3. Editar `Footer.astro` — substituir `SEU_FORM_ID`:
@@ -176,16 +200,31 @@ Colocar o arquivo de logo em `public/logo.png` (ou `.svg`) e editar `Header.astr
 action="https://formspree.io/f/SEU_FORM_ID"
 ```
 
-### 3. Favicon
-Substituir `public/favicon.ico` pelo favicon oficial da Casa do Lead.
+### 🟡 Importante
 
-### 4. Blog (páginas internas)
-Quando quiser ativar o blog completo, criar `src/pages/blog/[slug].astro` com Astro Content Collections.
+**4. Favicon**
+Substituir `public/favicon.ico` pelo ícone hexagonal CL da Casa do Lead.
+Converter `logo-icon.png` (só o hexágono) para `.ico` em https://favicon.io
 
-### 5. Política de Privacidade / Termos
-Preencher o conteúdo real em:
+**5. Domínio no Vercel**
+Após o deploy:
+1. Vercel → projeto casadolead → Settings → Domains
+2. Adicionar `www.casadolead.com.br` e `casadolead.com.br`
+3. No painel DNS: CNAME `www` → `cname.vercel-dns.com`
+4. A raiz `@` → IP `76.76.21.21`
+
+### 🟢 Opcional
+
+**6. Blog interno**
+Posts atualmente apontam para `#`. Para ativar páginas reais: criar `src/pages/blog/[slug].astro` com Astro Content Collections.
+
+**7. Política de Privacidade / Termos**
+Preencher conteúdo real em:
 - `src/pages/politica-de-privacidade.astro`
 - `src/pages/termos-e-condicoes.astro`
+
+**8. Ícones dos serviços — verificar ordem**
+Os ícones brancos `icon-13` a `icon-16` foram atribuídos aos 4 serviços em sequência. Confirmar visualmente se cada ícone faz sentido com seu serviço (só aparecem em fundo escuro).
 
 ### 6. Domínio no Vercel
 1. Vercel Dashboard → projeto casadolead → Settings → Domains
