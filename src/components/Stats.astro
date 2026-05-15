@@ -1,15 +1,18 @@
 ---
 const stats = [
-  { value: 153, suffix: '',  label: 'Projetos Entregues' },
-  { value: 80,  suffix: '+', label: 'Projetos Concluídos' },
-  { value: 1047,suffix: 'K', label: 'Receita Gerada' },
-  { value: 39,  suffix: '+', label: 'Empresas Atendidas' },
+  { value: 153, suffix: '',  label: 'Projetos Entregues',  icon: '/images/icon-9.png'  },
+  { value: 80,  suffix: '+', label: 'Projetos Concluídos', icon: '/images/icon-10.png' },
+  { value: 1047,suffix: 'K', label: 'Receita Gerada',      icon: '/images/icon-11.png' },
+  { value: 39,  suffix: '+', label: 'Empresas Atendidas',  icon: '/images/icon-12.png' },
 ];
 ---
 <section class="stats-section" aria-label="Números">
   <div class="container stats-inner">
     {stats.map((s) => (
       <div class="stat-item anim-hidden anim-zoom">
+        <div class="stat-icon">
+          <img src={s.icon} alt="" width="48" height="48" loading="lazy" />
+        </div>
         <div class="stat-number">
           <span class="counter" data-to={s.value} data-suffix={s.suffix} data-duration="2000">0</span>{s.suffix}
         </div>
@@ -33,6 +36,11 @@ const stats = [
   text-align: center;
 }
 .stat-item { padding: 16px; }
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+}
 .stat-number {
   font-family: var(--font-heading);
   font-size: clamp(36px, 5vw, 54px);

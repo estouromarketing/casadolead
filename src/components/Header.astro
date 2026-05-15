@@ -4,8 +4,10 @@
   <div class="container header-inner">
     <!-- Logo -->
     <a href="/" class="logo" aria-label="Casa do Lead">
-      <!-- Replace with <img src="/logo.png" alt="Casa do Lead" height="40" /> when logo is ready -->
-      <span class="logo-text">Casa do Lead</span>
+      <div class="logo-icon-wrap">
+        <img src="/images/logo-icon.png" alt="" class="logo-icon" aria-hidden="true" />
+      </div>
+      <span class="logo-name">Casa <span class="logo-highlight">do Lead</span></span>
     </a>
 
     <!-- Lottie brand animation (hidden on mobile) -->
@@ -56,15 +58,36 @@
   gap: 32px;
   height: 72px;
 }
-.logo { flex-shrink: 0; }
-.logo-text {
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-icon-wrap {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #fff;
+}
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display: block;
+}
+.logo-name {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--color-white);
-  letter-spacing: -0.5px;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
 }
-.logo-text span { color: var(--color-orange); }
+.logo-highlight { color: var(--color-orange); }
 .header-lottie {
   width: 100px;
   height: 100px;
